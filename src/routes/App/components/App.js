@@ -3,15 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { ThemeContext } from '../../../common/containers/App'
 
-import '../styles/_app.scss';
-import '../../../styles/_dark-mode.scss';
+import '../styles/_app.scss'
+import '../../../styles/_dark-mode.scss'
 
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext)
 
   const [themType, setThemeType] = useState(false)
 
-  const toggleBackGround = () => {
+  const toggleSystemTheme = () => {
     toggleTheme()
     setThemeType(!themType)
   }
@@ -24,7 +24,7 @@ function App() {
         </div>
 
         {/* --The button that should toggle dark mode-- */}
-        <button className="app__dark-mode-btn icon level-right" onClick={() => toggleBackGround()}>
+        <button className="app__dark-mode-btn icon level-right" onClick={() => toggleSystemTheme()}>
           { themType ? <FontAwesomeIcon class="fa-sun" icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
         </button>
 
